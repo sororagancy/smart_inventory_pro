@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_picking_portal,stock.picking.portal,stock.model_stock_picking,smart_inventory.group_inventory_portal_worker,1,1,0,0
+access_stock_move_portal,stock.move.portal,stock.model_stock_move,smart_inventory.group_inventory_portal_worker,1,1,0,0
+access_stock_move_line_portal,stock.move.line.portal,stock.model_stock_move_line,smart_inventory.group_inventory_portal_worker,1,1,1,0

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="smart_inventory.DashboardTemplate" owl="1">
+        <div class="container-fluid py-4 bg-light">
+            <h2 class="mb-4 text-primary fw-bold">Smart Inventory Dashboard</h2>
+            
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card shadow-sm text-center p-3 cursor-pointer" t-on-click="() => this.openPickingList('incoming')">
+                        <h5 class="text-info">المطلوب استلامه</h5>
+                        <h2 t-esc="state.stats.receipt" class="fw-bold"/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm text-center p-3 cursor-pointer" t-on-click="() => this.openPickingList('outgoing')">
+                        <h5 class="text-danger">المطلوب توصيله</h5>
+                        <h2 t-esc="state.stats.delivery" class="fw-bold"/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm text-center p-3 cursor-pointer" t-on-click="() => this.openPickingList('incoming')">
+                        <h5 class="text-warning">المرتجعات</h5>
+                        <h2 t-esc="state.stats.return" class="fw-bold"/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm text-center p-3 cursor-pointer" t-on-click="() => this.openPickingList('internal')">
+                        <h5 class="text-success">التحويلات الداخلية</h5>
+                        <h2 t-esc="state.stats.internal" class="fw-bold"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h4 class="mb-0">سجل الحركات المنتهية</h4>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>المرجع</th>
+                                <th>من مخزن</th>
+                                <th>إلى مخزن</th>
+                                <th>تاريخ الانتهاء</th>
+                                <th>طريقة الإدخال</th>
+                                <th>المستخدم</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="state.recentOperations" t-as="op" t-key="op.id">
+                                <td t-esc="op.name"/>
+                                <td t-esc="op.location_id[1]"/>
+                                <td t-esc="op.location_dest_id[1]"/>
+                                <td t-esc="op.date_done"/>
+                                <td>
+                                    <span t-if="op.is_processed_by_barcode" class="badge text-bg-success">Barcode</span>
+                                    <span t-else="" class="badge text-bg-secondary">Manual</span>
+                                </td>
+                                <td t-esc="op.portal_user_id ? op.portal_user_id[1] : 'Administrator'"/>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

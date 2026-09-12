@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_smart_inventory_dashboard" model="ir.actions.client">
+        <field name="name">Inventory Dashboard</field>
+        <field name="tag">smart_inventory_dashboard_action</field>
+    </record>
+
+    <record id="vpicktree_inherit_smart_inventory" model="ir.ui.view">
+        <field name="name">stock.picking.list.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[@name='state']" position="after">
+                <field name="is_processed_by_barcode" widget="boolean_toggle" readonly="1"/>
+                <field name="portal_user_id" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_picking_form_inherit_smart_inventory" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="is_processed_by_barcode" readonly="1"/>
+                <field name="portal_user_id" readonly="1"/>
+            </xpath>
+            </field>
+    </record>
+</odoo>
