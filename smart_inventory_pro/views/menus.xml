@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_smart_inventory_root" 
+              name="Smart Inventory" 
+              sequence="10" 
+              web_icon="stock,static/description/icon.png"/>
+
+    <menuitem id="menu_smart_inventory_dashboard" 
+              name="Dashboard" 
+              parent="menu_smart_inventory_root" 
+              action="action_smart_inventory_dashboard" 
+              sequence="1"/>
+
+    <menuitem id="menu_smart_inventory_operations" 
+              name="Operations" 
+              parent="menu_smart_inventory_root" 
+              sequence="2"/>
+              
+    <menuitem id="menu_smart_inventory_transfers" 
+              name="Transfers" 
+              parent="menu_smart_inventory_operations" 
+              action="stock.action_picking_tree_all" 
+              sequence="1"/>
+
+    <menuitem id="menu_smart_inventory_settings" 
+              name="Configuration" 
+              parent="menu_smart_inventory_root" 
+              sequence="100"/>
+              
+    <menuitem id="menu_smart_inventory_settings_general" 
+              name="Settings" 
+              parent="menu_smart_inventory_settings" 
+              action="stock.action_stock_config_settings" 
+              sequence="1"/>
+</odoo>

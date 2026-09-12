@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soror Smart Inventory - Odoo App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0b5394;
+            --secondary-color: #3d85c6;
+            --accent-color: #FFC107;
+            --dark-color: #1e3c72;
+            --light-bg: #f8f9fa;
+        }
+        body {
+            font-family: 'Montserrat', 'Cairo', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header-section {
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .header-section h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .header-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .banner-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin: 50px 0 30px;
+            font-weight: 800;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            color: var(--dark-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .highlight-box {
+            background-color: var(--light-bg);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .highlight-content {
+            flex: 1;
+        }
+        .highlight-content h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .highlight-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .highlight-content li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        .highlight-content li::before {
+            content: '✓';
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--dark-color);
+            color: #fff;
+            margin-top: 60px;
+        }
+        .footer img {
+            max-width: 150px;
+            margin-bottom: 15px;
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="container">
+            <h1>Soror Smart Inventory</h1>
+            <p>The Ultimate Mobile Barcode Scanning & Warehouse Management App for Odoo</p>
+            <!-- Replace with the generated banner image -->
+            <img src="banner.png" alt="Soror Smart Inventory Banner" class="banner-img">
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Why Choose Soror Smart Inventory?</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Camera Scanner</h3>
+                <p>Turn any smartphone into a powerful barcode scanner using the built-in HTML5 camera feature. No need for expensive dedicated PDA devices.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Offline Synchronization</h3>
+                <p>Never stop working. Our advanced local caching ensures you can continue scanning and processing operations even when the internet connection drops.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>All Warehouse Operations</h3>
+                <p>Seamlessly handle Receipts, Deliveries, Internal Transfers, Returns, and Continuous Cycle Counts all from a single mobile interface.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Strict Barcode Validation</h3>
+                <p>Enforce strict scanning policies to prevent manual quantity entry, reducing human error and ensuring 100% stock accuracy.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📳</div>
+                <h3>Haptic Feedback & Smart Pause</h3>
+                <p>Experience seamless scanning with device vibration on success, toast notifications, and a smart progress bar pause to prevent accidental double scans.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Advanced Dashboard</h3>
+                <p>Track which operations were processed via barcode and by which portal user directly from the enhanced Odoo backend backend tree and form views.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-content">
+                <h3>Built for Speed & Accuracy (مصمم للسرعة والدقة)</h3>
+                <p>Developed by Soror Agency, this module provides an optimized, touch-friendly UI specifically designed for warehouse workers. The "Smart Inventory" menu integrates perfectly into your Odoo environment.</p>
+                <ul>
+                    <li>Dynamic Scan Overlays with Visual Timers</li>
+                    <li>Supports 'Create Return' directly from Mobile</li>
+                    <li>Custom Settings for Scan Mode & Vibration</li>
+                    <li>Tracks Portal User processing activity</li>
+                </ul>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <!-- Replace with generated icon -->
+                <img src="icon.png" alt="App Icon" style="max-width: 200px; border-radius: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Ready to transform your warehouse?</h2>
+        <p>Get Soror Smart Inventory today and experience zero-error operations.</p>
+        <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">Developed by Soror Agency</p>
+    </div>
+
+</body>
+</html>
