@@ -3,7 +3,7 @@
     'version': '18.0.3.0.0',
     'author': 'SoRoR Agancy',
     'website': 'sororagancycom',
-    'price': 49.00,
+    'price': 30.00,
     'currency': 'USD',
     'license': 'OPL-1', # الترخيص القياسي للموديولات المدفوعة في أودو
     'images': ['static/description/banner.png'],
